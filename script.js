@@ -19,6 +19,11 @@ rsvpBtn.onclick = (e) => {
 };
 
 function fadeIn(el, duration) {
+  if (el.classList.contains('logo-img')) {
+    el.classList.add('fade-in');
+    el.style.display = '';
+    return;
+  }
   el.style.opacity = 0;
   el.style.display = '';
   el.style.transition = `opacity ${duration}ms`;
@@ -32,6 +37,9 @@ function fadeOut(el, duration) {
   el.style.opacity = 0;
   setTimeout(() => {
     el.style.display = 'none';
+    if (el.classList.contains('logo-img')) {
+      el.classList.remove('fade-in');
+    }
   }, duration);
 }
 
@@ -53,6 +61,7 @@ function fadeInFromBelow(el, distance, duration) {
 
 window.onload = () => {
   // 1. Logo fades in
+  logo.style.display = '';
   fadeIn(logo, logoFadeInDuration);
 
   // 2. Logo fades out, then text logo fades in
@@ -76,6 +85,7 @@ window.onload = () => {
 
 // Initial state for animation
 logo.style.opacity = 0;
+logo.style.display = 'none';
 textLogo.style.opacity = 0;
 textLogo.style.transform = 'translateY(0)';
 form.style.opacity = 0;
