@@ -18,6 +18,16 @@ rsvpBtn.onclick = (e) => {
   window.open(ticketmelonUrl, '_blank');
 };
 
+// Initial state for animation
+logo.style.opacity = 0;
+textLogo.classList.remove('fade-in', 'move-up');
+textLogo.style.opacity = 0;
+textLogo.style.transform = 'translateY(0)';
+form.classList.remove('fade-in');
+form.style.opacity = 0;
+form.style.transform = 'translateY(40px)';
+form.style.display = 'none';
+
 window.onload = () => {
   // 1. Logo fades in
   logo.style.display = '';
@@ -27,34 +37,26 @@ window.onload = () => {
     logo.style.opacity = 1;
   }, 10);
 
-  // 2. Logo fades out, then text logo fades in
+  // 2. Logo fades out
   setTimeout(() => {
     logo.style.transition = `opacity ${logoFadeOutDuration}ms`;
     logo.style.opacity = 0;
     setTimeout(() => {
       logo.style.display = 'none';
+      // 3. Text logo fades in
       textLogo.style.display = '';
       textLogo.classList.add('fade-in');
-      // 3. Text logo moves up, form fades in from below
       setTimeout(() => {
+        // 4. Text logo moves up
         textLogo.classList.add('move-up');
         setTimeout(() => {
+          // 5. Form fades in from below
           form.style.display = '';
           setTimeout(() => {
             form.classList.add('fade-in');
           }, 10);
-        }, textLogoMoveUpDuration - 200);
-      }, textLogoFadeInDuration + 200);
-    }, logoFadeOutDuration - 200);
+        }, textLogoMoveUpDuration);
+      }, textLogoFadeInDuration);
+    }, logoFadeOutDuration);
   }, logoFadeInDuration + logoDisplayDuration);
-};
-
-// Initial state for animation
-logo.style.opacity = 0;
-textLogo.classList.remove('fade-in', 'move-up');
-textLogo.style.opacity = 0;
-textLogo.style.transform = 'translateY(0)';
-form.classList.remove('fade-in');
-form.style.opacity = 0;
-form.style.transform = 'translateY(40px)';
-form.style.display = 'none'; 
+}; 
