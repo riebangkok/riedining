@@ -46,13 +46,14 @@ body {
   height: 100px;
   object-fit: contain;
   display: block;
-  margin: 0 auto 2.5rem auto;
-  opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0 auto 2rem auto;
 }
 
-.logo-img.fade-in {
-  opacity: 1;
+.transition-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .text-logo-img {
@@ -60,7 +61,22 @@ body {
   max-width: 80vw;
   height: auto;
   display: block;
-  margin: 0 auto 2.5rem auto;
+  margin: 0 auto;
+  transition: transform 0.7s cubic-bezier(0.4,0,0.2,1), opacity 1s;
+  will-change: transform, opacity;
+}
+
+.text-logo-img.move-up {
+  transform: translateY(-60px);
+}
+
+.text-logo-img.fade-in {
+  opacity: 1;
+}
+
+.text-logo-img {
+  opacity: 0;
+  transform: translateY(0);
 }
 
 #rsvp-form {
@@ -68,6 +84,15 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s;
+  will-change: opacity, transform;
+}
+
+#rsvp-form.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #rsvp-form label {
@@ -108,9 +133,6 @@ body {
 @media (max-width: 600px) {
   .text-logo {
     font-size: 2.5rem;
-  }
-  .text-logo-img {
-    width: 140px;
   }
   .container {
     padding: 0 1rem;

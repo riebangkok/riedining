@@ -18,65 +18,31 @@ rsvpBtn.onclick = (e) => {
   window.open(ticketmelonUrl, '_blank');
 };
 
-function fadeIn(el, duration) {
-  if (el.classList.contains('logo-img')) {
-    el.classList.add('fade-in');
-    el.style.display = '';
-    return;
-  }
-  el.style.opacity = 0;
-  el.style.display = '';
-  el.style.transition = `opacity ${duration}ms`;
-  setTimeout(() => {
-    el.style.opacity = 1;
-  }, 10);
-}
-
-function fadeOut(el, duration) {
-  el.style.transition = `opacity ${duration}ms`;
-  el.style.opacity = 0;
-  setTimeout(() => {
-    el.style.display = 'none';
-    if (el.classList.contains('logo-img')) {
-      el.classList.remove('fade-in');
-    }
-  }, duration);
-}
-
-function moveUp(el, distance, duration) {
-  el.style.transition = `transform ${duration}ms`;
-  el.style.transform = `translateY(-${distance}px)`;
-}
-
-function fadeInFromBelow(el, distance, duration) {
-  el.style.opacity = 0;
-  el.style.transform = `translateY(${distance}px)`;
-  el.style.display = '';
-  el.style.transition = `opacity ${duration}ms, transform ${duration}ms`;
-  setTimeout(() => {
-    el.style.opacity = 1;
-    el.style.transform = 'translateY(0)';
-  }, 10);
-}
-
 window.onload = () => {
   // 1. Logo fades in
   logo.style.display = '';
-  fadeIn(logo, logoFadeInDuration);
+  logo.style.opacity = 0;
+  logo.style.transition = `opacity ${logoFadeInDuration}ms`;
+  setTimeout(() => {
+    logo.style.opacity = 1;
+  }, 10);
 
   // 2. Logo fades out, then text logo fades in
   setTimeout(() => {
-    fadeOut(logo, logoFadeOutDuration);
+    logo.style.transition = `opacity ${logoFadeOutDuration}ms`;
+    logo.style.opacity = 0;
     setTimeout(() => {
+      logo.style.display = 'none';
       textLogo.style.display = '';
-      textLogo.style.opacity = 0;
-      fadeIn(textLogo, textLogoFadeInDuration);
-
+      textLogo.classList.add('fade-in');
       // 3. Text logo moves up, form fades in from below
       setTimeout(() => {
-        moveUp(textLogo, 60, textLogoMoveUpDuration);
+        textLogo.classList.add('move-up');
         setTimeout(() => {
-          fadeInFromBelow(form, 40, formFadeInDuration);
+          form.style.display = '';
+          setTimeout(() => {
+            form.classList.add('fade-in');
+          }, 10);
         }, textLogoMoveUpDuration - 200);
       }, textLogoFadeInDuration + 200);
     }, logoFadeOutDuration - 200);
@@ -85,9 +51,10 @@ window.onload = () => {
 
 // Initial state for animation
 logo.style.opacity = 0;
-logo.style.display = 'none';
+textLogo.classList.remove('fade-in', 'move-up');
 textLogo.style.opacity = 0;
 textLogo.style.transform = 'translateY(0)';
+form.classList.remove('fade-in');
 form.style.opacity = 0;
 form.style.transform = 'translateY(40px)';
 form.style.display = 'none'; 

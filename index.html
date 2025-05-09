@@ -9,12 +9,14 @@
 <body>
   <div class="container">
     <img id="logo" class="logo-img" src="media/rie. icon logo.png" alt="RIE Icon Logo" style="display:none;" />
-    <img id="text-logo" class="text-logo-img" src="media/rie. typo logo.png" alt="RIE Text Logo" style="display:none;" />
-    <form id="rsvp-form" style="display:none;">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" autocomplete="off" placeholder="Name" required>
-      <button type="submit" id="rsvp-btn">RSVP</button>
-    </form>
+    <div class="transition-group">
+      <img id="text-logo" class="text-logo-img" src="media/rie. typo logo.png" alt="RIE Text Logo" style="display:none;" />
+      <form id="rsvp-form" style="display:none;">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="off" placeholder="Name" required>
+        <button type="submit" id="rsvp-btn">RSVP</button>
+      </form>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>

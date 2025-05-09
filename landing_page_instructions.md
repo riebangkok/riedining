@@ -19,9 +19,9 @@ Create a beautiful, elegant landing page for a dinner party event. The page will
 ## Design
 - **Minimalist, elegant, and modern**
 - **Centered content** with generous whitespace
-- **Typography**: Use a clean, modern serif or sans-serif font similar to the design
+- **Typography**: Use garamond regular font 
 - **Animations**: Smooth, subtle fade and movement transitions
-- **Responsiveness**: Should look good on both desktop and mobile
+- **Responsiveness**: Should look good on both desktop and mobile and responsive to fit on all types of screen sizes
 
 ## Technical Requirements
 - **No backend**: Purely static site (HTML/CSS/JS or React/Vite, etc.)
