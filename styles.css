@@ -56,8 +56,8 @@ body {
 }
 
 .text-logo-img {
-  width: 225px;
-  max-width: 90vw;
+  width: 180px;
+  max-width: 80vw;
   height: auto;
   display: block;
   margin: 0 auto 2.5rem auto;
