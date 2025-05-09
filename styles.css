@@ -42,16 +42,16 @@ body {
 }
 
 .logo-img {
-  width: 48px;
-  height: 80px;
+  width: 60px;
+  height: 100px;
   object-fit: contain;
   display: block;
   margin: 0 auto 2rem auto;
 }
 
 .text-logo-img {
-  width: 180px;
-  max-width: 80vw;
+  width: 200px;
+  max-width: 100vw;
   height: auto;
   display: block;
   margin: 0 auto 2rem auto;
