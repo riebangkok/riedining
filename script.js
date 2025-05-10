@@ -44,14 +44,14 @@ window.onload = () => {
     setTimeout(() => {
       logo.style.display = 'none';
       // 3. Text logo fades in
-      textLogo.style.display = '';
+      textLogo.style.display = 'block';
       textLogo.classList.add('fade-in');
       setTimeout(() => {
         // 4. Text logo moves up
         textLogo.classList.add('move-up');
         setTimeout(() => {
           // 5. Form fades in from below
-          form.style.display = '';
+          form.style.display = 'flex';
           setTimeout(() => {
             form.classList.add('fade-in');
           }, 10);
