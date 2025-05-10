@@ -108,12 +108,12 @@ body {
 /* Responsive design */
 @media (max-width: 768px) {
     .logo {
-        max-width: 120px;
-        max-height: 120px;
+        max-width: 180px;
+        max-height: 180px;
     }
     .text-logo {
-        max-width: 140px;
-        max-height: 140px;
+        max-width: 240px;
+        max-height: 240px;
     }
     
     .name-input,
@@ -128,12 +128,12 @@ body {
 
 @media (max-width: 480px) {
     .logo {
-        max-width: 80px;
-        max-height: 80px;
+        max-width: 100px;
+        max-height: 100px;
     }
     .text-logo {
-        max-width: 90px;
-        max-height: 90px;
+        max-width: 140px;
+        max-height: 1400px;
     }
     
     .container {
