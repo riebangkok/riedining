@@ -57,17 +57,14 @@ body {
 }
 
 .text-logo-img {
-  width: 180px;
-  max-width: 80vw;
-  height: auto;
-  display: none;
-  opacity: 0;
-  transition: opacity 1s;
+  display: none;            /* start hidden */
+  opacity: 0;               /* start fully transparent */
+  transition: 
+    opacity 1s ease-in-out; /* match your JS duration: textLogoFadeInDuration */
 }
-
 .text-logo-img.fade-in {
-  display: block;
-  opacity: 1;
+  display: block;           /* make it participate in layout */
+  opacity: 1;               /* fade up to fully opaque */
 }
 
 .text-logo-img {
