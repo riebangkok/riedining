@@ -43,20 +43,7 @@ window.onload = () => {
     logo.style.opacity = 0;
     setTimeout(() => {
       logo.style.display = 'none';
-      // 3. Text logo fades in
-      textLogo.style.display = 'block';
-      textLogo.classList.add('fade-in');
-      setTimeout(() => {
-        // 4. Text logo moves up
-        textLogo.classList.add('move-up');
-        setTimeout(() => {
-          // 5. Form fades in from below
-          form.style.display = 'flex';
-          setTimeout(() => {
-            form.classList.add('fade-in');
-          }, 10);
-        }, textLogoMoveUpDuration);
-      }, textLogoFadeInDuration);
+      // Everything after this will be rewritten
     }, logoFadeOutDuration);
   }, logoFadeInDuration + logoDisplayDuration);
 }; 
