@@ -27,6 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     rsvpButton.addEventListener('click', (e) => {
         e.preventDefault();
         // Replace this URL with your actual Ticketmelon link
-        window.location.href = 'https://www.ticketmelon.com/';
+        window.location.href = 'www.ticketmelon.com/riebangkok/rie00';
     });
 });
