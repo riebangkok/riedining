@@ -60,22 +60,18 @@ body {
   width: 180px;
   max-width: 80vw;
   height: auto;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.7s cubic-bezier(0.4,0,0.2,1), opacity 1s;
-  will-change: transform, opacity;
-}
-
-.text-logo-img.move-up {
-  transform: translateY(-60px);
+  display: none;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 .text-logo-img.fade-in {
+  display: block;
   opacity: 1;
 }
 
 .text-logo-img {
-  opacity: 0;
+  opacity:100;
   transform: translateY(0);
 }
 
