@@ -43,7 +43,10 @@ window.onload = () => {
     logo.style.opacity = 0;
     setTimeout(() => {
       logo.style.display = 'none';
-      // Everything after this will be rewritten
+      textLogo.style.display = 'block';
+      setTimeout(() => {
+        textLogo.classList.add('fade-in');
+      }, 10);
     }, logoFadeOutDuration);
   }, logoFadeInDuration + logoDisplayDuration);
 }; 
